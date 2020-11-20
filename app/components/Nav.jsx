@@ -27,7 +27,7 @@ var Nav = () => {
 				<div>
 					<ul className="menu">
 						<li className="menu-text">
-							Created by <a className="created-text">Mark Price</a>
+							Created by <a href="https://github.com/happycycler/reacttimer" target="_blank" className="created-text">Mark Price</a>
 						</li>
 					</ul>
 				</div>

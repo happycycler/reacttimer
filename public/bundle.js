@@ -26887,7 +26887,7 @@
 							'Created by ',
 							React.createElement(
 								'a',
-								{ className: 'created-text' },
+								{ href: 'https://github.com/happycycler/reacttimer', target: '_blank', className: 'created-text' },
 								'Mark Price'
 							)
 						)
