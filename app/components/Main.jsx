@@ -7,7 +7,6 @@ var Main = (props) => {
 			<Nav />
 			<div>
 				<div>
-					<p>React Time Application</p>
 					{props.children}
 				</div>
 			</div>

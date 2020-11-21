@@ -104,17 +104,24 @@
 	    hashHistory = _require.hashHistory;
 
 	var Main = __webpack_require__(251);
+	var Timer = __webpack_require__(253);
+	var Countdown = __webpack_require__(254);
 
 	// Load foundation
-	__webpack_require__(253);
+	__webpack_require__(255);
 	$(document).foundation();
 
-	__webpack_require__(257);
+	__webpack_require__(259);
 
 	ReactDOM.render(React.createElement(
 		Router,
 		{ history: hashHistory },
-		React.createElement(Route, { path: '/', component: Main })
+		React.createElement(
+			Route,
+			{ path: '/', component: Main },
+			React.createElement(Route, { path: 'countdown', component: Countdown }),
+			React.createElement(IndexRoute, { component: Timer })
+		)
 	), document.getElementById('app'));
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)))
 
@@ -26806,11 +26813,6 @@
 				React.createElement(
 					'div',
 					null,
-					React.createElement(
-						'p',
-						null,
-						'React Time Application'
-					),
 					props.children
 				)
 			)
@@ -26851,23 +26853,17 @@
 						null,
 						React.createElement(
 							IndexLink,
-							{
-								to: '/',
-								activeClass: 'active',
-								activeStyle: { fontWeight: 'bold' } },
-							'Timer'
+							{ to: '/', activeClass: 'active', activeStyle: { fontWeight: 'bold' } },
+							'Timer '
 						)
 					),
 					React.createElement(
 						'li',
 						null,
 						React.createElement(
-							IndexLink,
-							{
-								to: '/',
-								activeClass: 'active',
-								activeStyle: { fontWeight: 'bold' } },
-							'Countdown'
+							Link,
+							{ to: '/countdown', activeClass: 'active', activeStyle: { fontWeight: 'bold' } },
+							'Countdown '
 						)
 					)
 				)
@@ -26903,13 +26899,57 @@
 /* 253 */
 /***/ (function(module, exports, __webpack_require__) {
 
+	'use strict';
+
+	var React = __webpack_require__(8);
+
+	var Timer = React.createClass({
+		displayName: 'Timer',
+
+		render: function render() {
+			return React.createElement(
+				'p',
+				null,
+				'Timer Component!'
+			);
+		}
+	});
+
+	module.exports = Timer;
+
+/***/ }),
+/* 254 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(8);
+
+	var Countdown = React.createClass({
+		displayName: 'Countdown',
+
+		render: function render() {
+			return React.createElement(
+				'p',
+				null,
+				'Countdown Component!'
+			);
+		}
+	});
+
+	module.exports = Countdown;
+
+/***/ }),
+/* 255 */
+/***/ (function(module, exports, __webpack_require__) {
+
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(254);
+	var content = __webpack_require__(256);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(256)(content, {});
+	var update = __webpack_require__(258)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -26926,10 +26966,10 @@
 	}
 
 /***/ }),
-/* 254 */
+/* 256 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(255)();
+	exports = module.exports = __webpack_require__(257)();
 	// imports
 
 
@@ -26940,7 +26980,7 @@
 
 
 /***/ }),
-/* 255 */
+/* 257 */
 /***/ (function(module, exports) {
 
 	/*
@@ -26996,7 +27036,7 @@
 
 
 /***/ }),
-/* 256 */
+/* 258 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/*
@@ -27250,16 +27290,16 @@
 
 
 /***/ }),
-/* 257 */
+/* 259 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(258);
+	var content = __webpack_require__(260);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(256)(content, {});
+	var update = __webpack_require__(258)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -27276,15 +27316,15 @@
 	}
 
 /***/ }),
-/* 258 */
+/* 260 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(255)();
+	exports = module.exports = __webpack_require__(257)();
 	// imports
 
 
 	// module
-	exports.push([module.id, ".top-bar,\n.top-bar ul {\n  background-color: #343334; }\n\n.top-bar .menu-text {\n  color: whitesmoke; }\n\n.top-bar .menu > .menu-text > a {\n  display: inline;\n  padding: 0; }\n", ""]);
+	exports.push([module.id, ".top-bar,\n.top-bar ul {\n  background-color: #343334; }\n\n.top-bar .menu-text {\n  color: whitesmoke; }\n\n.top-bar .menu > .menu-text > a {\n  display: inline;\n  padding: 0; }\n\n.top-bar .active-link {\n  font-weight: bold; }\n", ""]);
 
 	// exports
 
